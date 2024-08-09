@@ -12,6 +12,10 @@ A simple yet effective password generator application built with React. This app
 ## Demo
 
 
+https://github.com/user-attachments/assets/ee5b75d5-3f1f-4abe-805a-aff00b53b91c
+
+
+
 
 ## Installation
 
