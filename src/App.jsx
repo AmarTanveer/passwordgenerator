@@ -36,41 +36,55 @@ function App() {
 
   return (
     <>
-      <div className="w-full h-screen bg-zinc-900">
-        <h1>Password Generator</h1>
-        <div className="flex">
-          <input
-            type="text"
-            contentEditable="false"
-            placeholder="password"
-            value={password}
-            ref={myref}
-          />
-          <button type="submit" onClick={() => copyPassword()}>
-            Copy
-          </button>
-        </div>
-        <div className="flex">
-          <input
-            type="range"
-            min={6}
-            max={50}
-            value={length}
-            onChange={(event) => setLength(event.target.value)}
-          />
-          <label htmlFor="length">Length: {length}</label>
-          <input
-            type="checkbox"
-            defaultChecked={isCharacter}
-            onChange={() => setIsCharacter((prev) => !prev)}
-          />
-          <label htmlFor="character">Character</label>
-          <input
-            type="checkbox"
-            defaultChecked={isNumber}
-            onChange={() => setIsNumber((prev) => !prev)}
-          />
-          <label htmlFor="number">Number</label>
+      <div className="w-screen h-screen bg-zinc-900 text-zinc-50 flex items-center justify-center">
+        <div className="container bg-slate-500 rounded-lg p-6 w-[450px]">
+          <h1 className="text-2xl mt-5 mb-5 text-center">Password Generator</h1>
+          <div className="flex mb-5">
+            <input
+              type="text"
+              contentEditable="false"
+              placeholder="password"
+              value={password}
+              ref={myref}
+              className="w-full p-2 rounded-l-md bg-zinc-200 text-zinc-900"
+            />
+            <button
+              type="submit"
+              onClick={() => copyPassword()}
+              className="bg-blue-500 text-white p-2 rounded-r-md"
+            >
+              Copy
+            </button>
+          </div>
+          <div className="flex items-center justify-between">
+            <label htmlFor="length">Length: {length}</label>
+            <input
+              type="range"
+              min={6}
+              max={50}
+              value={length}
+              onChange={(event) => setLength(event.target.value)}
+              className="mx-4"
+            />
+          </div>
+          <div className="flex items-center gap-5 mt-3">
+            <div className="flex items-center gap-2">
+              <label htmlFor="character">Character</label>
+              <input
+                type="checkbox"
+                defaultChecked={isCharacter}
+                onChange={() => setIsCharacter((prev) => !prev)}
+              />
+            </div>
+            <div className="flex items-center gap-2">
+              <label htmlFor="number">Number</label>
+              <input
+                type="checkbox"
+                defaultChecked={isNumber}
+                onChange={() => setIsNumber((prev) => !prev)}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </>
